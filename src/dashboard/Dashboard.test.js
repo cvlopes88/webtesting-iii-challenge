@@ -7,3 +7,25 @@ import Dashboard from './Dashboard';
 test('render dashboard correct', () => {
     render(<Dashboard />);
 })
+
+
+test("testing Dashboard", () => {
+
+   const toggleLocked = jest.fn();
+   const toggleClosed = jest.fn();
+
+   const { getByText } = render(<Dashboard 
+   
+    toggleClosed={toggleClosed}
+    toggleLocked={toggleLocked}
+
+   
+   
+   />);
+
+   
+
+
+
+
+})

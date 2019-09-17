@@ -19,6 +19,7 @@ const toggleLocked = jest.fn();
 const locked = jest.fn();
 const closed = jest.fn();
 const toggleClosed = jest.fn();
+const disabled = jest.fn();
 
 const { getByTestId, getByText } = render(<Controls  
     
@@ -26,7 +27,7 @@ toggleLocked={toggleLocked}
 locked={locked}
 closed={closed}
 toggleClosed={toggleClosed}
-
+disabled={true}
 />);
 
 const togglebtn = getByTestId(/togglebtn/i);
@@ -35,6 +36,7 @@ const togglebtnTwo = getByText(/Open Gate/i);
 fireEvent.click(togglebtn);
 fireEvent.click(togglebtnTwo);
 expect(toggleLocked).toHaveBeenCalled();
+expect(locked).toBeTruthy();
 
 });
 
