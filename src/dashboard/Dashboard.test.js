@@ -9,23 +9,6 @@ test('render dashboard correct', () => {
 })
 
 
-test("testing Dashboard", () => {
-
-   const toggleLocked = jest.fn();
-   const toggleClosed = jest.fn();
-
-   const { getByText } = render(<Dashboard 
-   
-    toggleClosed={toggleClosed}
-    toggleLocked={toggleLocked}
-
-   
-   
-   />);
-
-   
-
-
-
-
+test("testing Dashboard snapshot", () => {
+ expect(render(<Dashboard />)).toMatchSnapshot();
 })
