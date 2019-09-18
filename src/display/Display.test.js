@@ -20,13 +20,15 @@ test('should have green-led when unlocked and open ', () => {
 
    const { getByText } = render(<Display 
    
-    closed={true}
+    closed={false}
     locked={false}
 
 />);
-getByText(/closed/i)
-getByText(/unlocked/i)
+const unlocked = getByText(/unlocked/i)
+const open = getByText(/open/i)
 
+expect(open.classList).toContain('green-led')
+expect(unlocked.classList).toContain('green-led')
 });
 
 
